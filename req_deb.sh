@@ -67,7 +67,7 @@ check_pack () {
       add-apt-repository ppa:nginx/stable
     fi
 
-    if [[ "$1" == "php7.4" ]]
+    if [[ "$1" == "php" ]]
       then
       add-apt-repository -y ppa:sergey-dryabzhinsky/php80
     fi
@@ -88,7 +88,7 @@ check_pack () {
 apt update
 apt install -y curl && check_pack "curl"
 apt install -y wget nginx && check_pack "nginx" 
-apt install -y php7.4 && check_pack "php7.4" 
+apt install -y php && check_pack "php" 
 apt install -y python3 && check_pack "python3"
 apt install -y gcc
 apt install -y php-fpm php-cli php-mysql php-curl php-json -y
