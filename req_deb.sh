@@ -199,7 +199,7 @@ server {
         root /var/www/mail;
         index index.html index.htm index.nginx-debian.hmtl;
 
-        server_name $domain www.$domain $sub$domain www.$sub$domain
+        server_name $domain www.$domain $sub$domain www.$sub$domain ;
 
         location / { 
                 try_files $uri $uri/ =404;
