@@ -91,7 +91,7 @@ apt install -y wget nginx && check_pack "nginx"
 apt install -y php7.4 && check_pack "php7.4" 
 apt install -y python3 && check_pack "python3"
 apt install -y gcc
-apt install -y php7.4-fpm php7.4-cli php7.4-mysql php7.4-curl php7.4-json -y
+apt install -y php-fpm php-cli php-mysql php-curl php-json -y
 
 ecco 3 && echo $(ufw app list) && ecco 3
 
@@ -110,7 +110,9 @@ else
 fi
 
 ecco 2
-echo 'ServerName 127.0.0.1' >> /etc/nginx/nginx.conf
+#disable apache2
+systemctl disable apache2
+systemctl stop apache2
 
 #basic
 systemctl stop nginx
